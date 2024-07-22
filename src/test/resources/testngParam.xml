@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Negative Login" verbose="1">
+    <parameter name="browserParam"  value="edge"/>
+
+    <test name="Invalid User">
+        <parameter name="usernameParam"  value="incorrect"/>
+        <parameter name="passwordParam"  value="SuperSecretPassword!"/>
+        <parameter name="errorMessageParam"  value="Your username is invalid!"/>
+        <classes>
+            <class name="InvalidLoginTest"/>
+        </classes>
+    </test>
+
+
+
+    <test name="Invalid Password">
+        <parameter name="usernameParam"  value="tomsmith"/>
+        <parameter name="passwordParam"  value="incorrect"/>
+        <parameter name="errorMessageParam"  value="Your password is invalid!"/>
+        <classes>
+            <class name="InvalidLoginTest"/>
+        </classes>
+    </test>
+
+
+</suite>
